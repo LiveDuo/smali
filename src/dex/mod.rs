@@ -1,7 +1,7 @@
 #[macro_use]
 pub mod error;
 
-pub(crate) mod dex_file;
+pub mod dex_file;
 pub(crate) mod leb;
 pub(crate) mod annotations;
 pub(crate) mod instructions;
