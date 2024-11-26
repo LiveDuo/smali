@@ -6,8 +6,8 @@ use std::path::PathBuf;
 use crate::types::{SmaliClass, SmaliError};
 
 pub mod types;
-mod smali_parse;
-mod smali_write;
+pub mod smali_parse;
+pub mod smali_write;
 pub mod dex;
 
 /// Recurses a base path, typically a 'smali' folder from apktool returning a Vector of all found smali classes

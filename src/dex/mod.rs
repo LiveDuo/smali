@@ -2,10 +2,10 @@
 pub mod error;
 
 pub mod dex_file;
-pub(crate) mod leb;
-pub(crate) mod annotations;
-pub(crate) mod instructions;
-pub(crate) mod encoded_values;
+pub mod leb;
+pub mod annotations;
+pub mod instructions;
+pub mod encoded_values;
 
 
 use crate::dex::error::DexError;
@@ -92,7 +92,7 @@ pub(crate) fn write_u2(buffer: &mut Vec<u8>, val: u16) -> usize
 
 pub(crate) fn write_u4(buffer: &mut Vec<u8>, val: u32) -> usize
 {
-    for i in (0..4)
+    for i in 0..4
     {
         buffer.push((val >> (i * 8)) as u8);
     }

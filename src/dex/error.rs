@@ -1,5 +1,6 @@
 use std::fmt;
 
+#[allow(unused)]
 macro_rules! err {
     ($base:ident, $msg:literal) => {
         DexError::with_context($base, $msg)
@@ -21,8 +22,6 @@ macro_rules! err {
     };
 }
 
-pub(crate) use err;
-
 #[macro_export]
 macro_rules! fail {
     ($msg:literal) => {
@@ -42,8 +41,6 @@ macro_rules! fail {
     };
 }
 
-pub(crate) use fail;
-
 #[derive(Debug, PartialEq, Eq)]
 pub struct DexError
 {
@@ -61,7 +58,7 @@ impl DexError
         }
     }
 
-    pub(crate) fn with_context(base: DexError, context: String) -> Self
+    pub fn with_context(base: DexError, context: String) -> Self
     {
         let mut contexts = base.contexts;
         contexts.push(context);
